@@ -1,0 +1,25 @@
+{
+    "name": "ytet chrome extension",
+    "description": "right click on yt tabs joy",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "storage", 
+        "chrome.tabs", 
+        "sessions",
+        "contextMenus",
+        "https://www.youtube.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.youtube.com/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
